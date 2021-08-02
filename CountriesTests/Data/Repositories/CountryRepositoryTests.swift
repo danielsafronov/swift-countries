@@ -6,27 +6,40 @@
 //
 
 import XCTest
+import Combine
+@testable import Countries
 
 class CountryRepositoryTests: XCTestCase {
+    var subscriptions = Set<AnyCancellable>()
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        subscriptions = []
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        subscriptions = []
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testObserve() throws {
+        let localRepositoryMock = LocalCountryRepositoryMock()
+        let remoteRepositoryMock = RemoteCountryRepositoryMock()
+        let repository = CountryRepository(localRepository: localRepositoryMock, remoteRepository: remoteRepositoryMock)
+        let expectation = XCTestExpectation(description: #function)
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+        let _ = repository.observe()
+            .sink(
+                receiveCompletion: { _ in},
+                receiveValue: { countries in
+                    XCTAssertEqual(3, countries.count)
+                    expectation.fulfill()
+                }
+            )
+            .store(in: &subscriptions)
+        
+        wait(for: [expectation], timeout: 10)
 
+        XCTAssertEqual(1, remoteRepositoryMock.observeCallCount)
+        XCTAssertEqual(3, localRepositoryMock.storeCallCount)
+        XCTAssertEqual(1, localRepositoryMock.observeCallCount)
+    }
 }
