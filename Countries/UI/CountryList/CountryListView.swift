@@ -32,7 +32,7 @@ struct CountryListView: View {
                 )
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Countries")
+            .navigationTitle(Text("Countries"))
         }
     }
 }

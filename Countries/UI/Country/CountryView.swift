@@ -64,7 +64,6 @@ struct CountryView_Previews: PreviewProvider {
             container: Container.defaultValue,
             country: Country(name: "Country Name", alpha3Code: "Country Code")
         )
-        .preferredColorScheme(.light)
         .environment(\.container, .defaultValue)
     }
 }

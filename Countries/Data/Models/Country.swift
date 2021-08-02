@@ -31,7 +31,7 @@ struct CountryNetworkDto: Codable, Equatable {
 }
 
 extension Country {
-    init?(dto: CountryNetworkDto) throws {
+    init?(dto: CountryNetworkDto) {
         var lat = 0.0
         var lng = 0.0
         
@@ -39,7 +39,6 @@ extension Country {
             lat = dto.latlng?[0] ?? 0.0
             lng = dto.latlng?[1] ?? 0.0
         }
-        
         
         self.init(
             name: dto.name,

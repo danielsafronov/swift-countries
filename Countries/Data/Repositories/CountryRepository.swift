@@ -34,33 +34,6 @@ protocol CountryRepositoryProtocol {
     func observe() -> AnyPublisher<[Country], Error>
 }
 
-/// Country repository wich combine local and remote data storage.
-class CountryRepository: CountryRepositoryProtocol {
-    var localRepository: LocalCountryRepositoryProtocol
-    var remoteRepository: RemoteCountryRepositoryProtocol
-    
-    init(localRepository: LocalCountryRepositoryProtocol, remoteRepository: RemoteCountryRepositoryProtocol) {
-        self.localRepository = localRepository
-        self.remoteRepository = remoteRepository
-    }
-    
-    /// Observe countries.
-    /// - Returns: A publisher which provide countries.
-    func observe() -> AnyPublisher<[Country], Error> {
-        return remoteRepository.observe()
-            .removeDuplicates()
-            .tryMap { [localRepository] in
-                $0.forEach { country in
-                    localRepository.store(item: country)
-                }
-            }
-            .flatMap { [localRepository] in
-                localRepository.observe()
-            }
-            .eraseToAnyPublisher()
-    }
-}
-
 /// Local country repository.
 struct LocalCountryRepository: LocalCountryRepositoryProtocol {
     let container: NSPersistentContainer
@@ -88,7 +61,7 @@ struct LocalCountryRepository: LocalCountryRepositoryProtocol {
     /// Store country instance in local storage.
     /// - Parameter item: country instance.
     func store(item: Country) {
-        CountryMO(entity: item, insertInto: container.viewContext)
+        let _ = CountryMO(entity: item, insertInto: container.viewContext)
     }
 }
 
@@ -123,8 +96,8 @@ struct RemoteCountryRepository: RemoteCountryRepositoryProtocol {
             }
             .decode(type: [CountryNetworkDto].self, decoder: JSONDecoder())
             .tryMap { dtos in
-                try dtos.compactMap { dto in
-                    try Country(dto: dto)
+                dtos.compactMap { dto in
+                    Country(dto: dto)
                 }
             }
             .receive(on: DispatchQueue.main)
@@ -132,3 +105,31 @@ struct RemoteCountryRepository: RemoteCountryRepositoryProtocol {
             .eraseToAnyPublisher()
     }
 }
+
+/// Country repository wich combine local and remote data storage.
+class CountryRepository: CountryRepositoryProtocol {
+    var localRepository: LocalCountryRepositoryProtocol
+    var remoteRepository: RemoteCountryRepositoryProtocol
+    
+    init(localRepository: LocalCountryRepositoryProtocol, remoteRepository: RemoteCountryRepositoryProtocol) {
+        self.localRepository = localRepository
+        self.remoteRepository = remoteRepository
+    }
+    
+    /// Observe countries.
+    /// - Returns: A publisher which provide countries.
+    func observe() -> AnyPublisher<[Country], Error> {
+        return remoteRepository.observe()
+            .removeDuplicates()
+            .tryMap { [localRepository] in
+                $0.forEach { country in
+                    localRepository.store(item: country)
+                }
+            }
+            .flatMap { [localRepository] in
+                localRepository.observe()
+            }
+            .eraseToAnyPublisher()
+    }
+}
+
