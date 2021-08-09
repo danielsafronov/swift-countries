@@ -28,12 +28,17 @@
 		B26A030926AEAE6800B5C1A6 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A030826AEAE6800B5C1A6 /* Application.swift */; };
 		B26A030E26AEBCFD00B5C1A6 /* Country+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A030D26AEBCFD00B5C1A6 /* Country+CoreData.swift */; };
 		B26A031126AEF13800B5C1A6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A031026AEF13800B5C1A6 /* Endpoint.swift */; };
-		B26A031326B002E600B5C1A6 /* Nework.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A031226B002E600B5C1A6 /* Nework.swift */; };
+		B26A031326B002E600B5C1A6 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A031226B002E600B5C1A6 /* Network.swift */; };
 		B26A031526B0122D00B5C1A6 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A031426B0122D00B5C1A6 /* CountryListViewModel.swift */; };
 		B26A031B26B2CD0E00B5C1A6 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A031A26B2CD0E00B5C1A6 /* CountryView.swift */; };
 		B26A031D26B2D1AC00B5C1A6 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A031C26B2D1AC00B5C1A6 /* CountryViewModel.swift */; };
 		B26A031F26B2D96F00B5C1A6 /* CountryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A031E26B2D96F00B5C1A6 /* CountryItemView.swift */; };
 		B26A032126B2EAF800B5C1A6 /* CountryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A032026B2EAF800B5C1A6 /* CountryMapView.swift */; };
+		B26EACAB26BD678F003690B8 /* LocalCountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26EACAA26BD678F003690B8 /* LocalCountryRepository.swift */; };
+		B26EACAE26BD67DF003690B8 /* RemoteCountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26EACAD26BD67DF003690B8 /* RemoteCountryRepository.swift */; };
+		B26EACB026BD6848003690B8 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26EACAF26BD6848003690B8 /* CountryService.swift */; };
+		B26EACB326BD696E003690B8 /* CountryNetworkDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26EACB226BD696E003690B8 /* CountryNetworkDto.swift */; };
+		B26EACB526BD6D15003690B8 /* CountrySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26EACB426BD6D15003690B8 /* CountrySDK.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,12 +86,17 @@
 		B26A030826AEAE6800B5C1A6 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		B26A030D26AEBCFD00B5C1A6 /* Country+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreData.swift"; sourceTree = "<group>"; };
 		B26A031026AEF13800B5C1A6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		B26A031226B002E600B5C1A6 /* Nework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nework.swift; sourceTree = "<group>"; };
+		B26A031226B002E600B5C1A6 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		B26A031426B0122D00B5C1A6 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		B26A031A26B2CD0E00B5C1A6 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		B26A031C26B2D1AC00B5C1A6 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		B26A031E26B2D96F00B5C1A6 /* CountryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItemView.swift; sourceTree = "<group>"; };
 		B26A032026B2EAF800B5C1A6 /* CountryMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMapView.swift; sourceTree = "<group>"; };
+		B26EACAA26BD678F003690B8 /* LocalCountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCountryRepository.swift; sourceTree = "<group>"; };
+		B26EACAD26BD67DF003690B8 /* RemoteCountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCountryRepository.swift; sourceTree = "<group>"; };
+		B26EACAF26BD6848003690B8 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
+		B26EACB226BD696E003690B8 /* CountryNetworkDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNetworkDto.swift; sourceTree = "<group>"; };
+		B26EACB426BD6D15003690B8 /* CountrySDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySDK.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				B26A030326AEAC1700B5C1A6 /* CountryRepository.swift */,
+				B26EACAA26BD678F003690B8 /* LocalCountryRepository.swift */,
+				B26EACAD26BD67DF003690B8 /* RemoteCountryRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -304,8 +316,11 @@
 		B26A030F26AEF12600B5C1A6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B26EACB126BD695E003690B8 /* Models */,
 				B26A031026AEF13800B5C1A6 /* Endpoint.swift */,
-				B26A031226B002E600B5C1A6 /* Nework.swift */,
+				B26A031226B002E600B5C1A6 /* Network.swift */,
+				B26EACAF26BD6848003690B8 /* CountryService.swift */,
+				B26EACB426BD6D15003690B8 /* CountrySDK.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -319,6 +334,14 @@
 				B26A032026B2EAF800B5C1A6 /* CountryMapView.swift */,
 			);
 			path = Country;
+			sourceTree = "<group>";
+		};
+		B26EACB126BD695E003690B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B26EACB226BD696E003690B8 /* CountryNetworkDto.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,15 +475,20 @@
 			files = (
 				B26A030926AEAE6800B5C1A6 /* Application.swift in Sources */,
 				B26A02F926AEA83900B5C1A6 /* CountryListView.swift in Sources */,
-				B26A031326B002E600B5C1A6 /* Nework.swift in Sources */,
+				B26EACAB26BD678F003690B8 /* LocalCountryRepository.swift in Sources */,
+				B26EACB526BD6D15003690B8 /* CountrySDK.swift in Sources */,
+				B26A031326B002E600B5C1A6 /* Network.swift in Sources */,
 				B26A02D126AEA6F900B5C1A6 /* Persistence.swift in Sources */,
 				B26A030026AEA8F100B5C1A6 /* CountryListItemView.swift in Sources */,
 				B26A031D26B2D1AC00B5C1A6 /* CountryViewModel.swift in Sources */,
+				B26EACB326BD696E003690B8 /* CountryNetworkDto.swift in Sources */,
 				B26A02D426AEA6F900B5C1A6 /* Countries.xcdatamodeld in Sources */,
 				B26A030E26AEBCFD00B5C1A6 /* Country+CoreData.swift in Sources */,
 				B26A02FD26AEA89000B5C1A6 /* Country.swift in Sources */,
+				B26EACB026BD6848003690B8 /* CountryService.swift in Sources */,
 				B26A030726AEAD8100B5C1A6 /* Container.swift in Sources */,
 				B26A031F26B2D96F00B5C1A6 /* CountryItemView.swift in Sources */,
+				B26EACAE26BD67DF003690B8 /* RemoteCountryRepository.swift in Sources */,
 				B26A031B26B2CD0E00B5C1A6 /* CountryView.swift in Sources */,
 				B26A030426AEAC1700B5C1A6 /* CountryRepository.swift in Sources */,
 				B26A032126B2EAF800B5C1A6 /* CountryMapView.swift in Sources */,

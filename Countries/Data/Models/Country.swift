@@ -21,15 +21,6 @@ extension Country: Identifiable {
     var id: String? { alpha3Code }
 }
 
-struct CountryNetworkDto: Codable, Equatable {
-    var name: String? = nil
-    var alpha3Code: String? = nil
-    var region: String? = nil
-    var subregion: String? = nil
-    var population: Int64? = nil
-    var latlng: [Double]? = nil
-}
-
 extension Country {
     init?(dto: CountryNetworkDto) {
         var lat = 0.0

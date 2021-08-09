@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum NetworkStatusCode: Int {
+    case ok = 200
+}
+
 enum NetworkError: Error {
     case clientError
 }

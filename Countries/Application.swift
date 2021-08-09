@@ -13,18 +13,21 @@ struct Application {
 }
 
 extension Application {
-    static func boostrap(container: NSPersistentContainer) -> Self {
-        let container = boostrapContainer(container: container)
+    static func bootstrap(container: NSPersistentContainer) -> Self {
+        let container = bootstrapContainer(container: container)
         
         return Application(container: container)
     }
 }
 
 extension Application {
-    private static func boostrapContainer(container: NSPersistentContainer) -> Container {
-        let localCountryRepository = boostrapLocalCountryRepository(container: container)
-        let remoteCountryRepository = boostrapRemoteCountryRepository()
-        let countryRepository = boostrapCountryRepository(
+    private static func bootstrapContainer(container: NSPersistentContainer) -> Container {
+        let service = bootstrapCountryService()
+        let sdk = bootstrapCountrySdk(service: service)
+        
+        let localCountryRepository = bootstrapLocalCountryRepository(container: container)
+        let remoteCountryRepository = bootstrapRemoteCountryRepository(sdk: sdk)
+        let countryRepository = bootstrapCountryRepository(
             localRepository: localCountryRepository,
             remoteRepository: remoteCountryRepository
         )
@@ -34,7 +37,7 @@ extension Application {
 }
 
 extension Application {
-    private static func boostrapCountryRepository(
+    private static func bootstrapCountryRepository(
         localRepository: LocalCountryRepositoryProtocol,
         remoteRepository: RemoteCountryRepositoryProtocol
     ) -> CountryRepositoryProtocol {
@@ -46,15 +49,27 @@ extension Application {
 }
 
 extension Application {
-    private static func boostrapRemoteCountryRepository() -> RemoteCountryRepositoryProtocol {
-        return RemoteCountryRepository()
+    private static func bootstrapLocalCountryRepository(
+        container: NSPersistentContainer
+    ) -> LocalCountryRepositoryProtocol {
+        return LocalCountryRepository(container: container)
     }
 }
 
 extension Application {
-    private static func boostrapLocalCountryRepository(
-        container: NSPersistentContainer
-    ) -> LocalCountryRepositoryProtocol {
-        return LocalCountryRepository(container: container)
+    private static func bootstrapRemoteCountryRepository(sdk: CountrySDKProtocol) -> RemoteCountryRepositoryProtocol {
+        return RemoteCountryRepository(sdk: sdk)
+    }
+}
+
+extension Application {
+    private static func bootstrapCountrySdk(service: CountryServiceProtocol) -> CountrySDKProtocol {
+        return CountrySDK(service: service)
+    }
+}
+
+extension Application {
+    private static func bootstrapCountryService() -> CountryServiceProtocol {
+        return CountryService()
     }
 }

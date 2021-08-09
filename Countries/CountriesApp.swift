@@ -15,7 +15,7 @@ struct CountriesApp: App {
     
     init() {
         self.persistenceController = PersistenceController.shared
-        self.container = Application.boostrap(container: persistenceController.container).container
+        self.container = Application.bootstrap(container: persistenceController.container).container
     }
 
     var body: some Scene {
