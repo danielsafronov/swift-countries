@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Country: Codable, Equatable {
+struct Country: Codable, Equatable, Hashable {
     var name: String? = nil
     var alpha3Code: String? = nil
     var region: String? = nil
