@@ -9,8 +9,8 @@ The application uses the [restcountries.eu](https://restcountries.eu/) REST API 
 
 ## Screenshots
 
-### Light theme: 
-![Country List Screen](https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%201.png) ![Country List Screen Search](https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%202.png) ![Country Detail Screen](https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%203.png) 
+### Light theme 
+<img src="https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%201.png" width="200"> <img src="https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%202.png" width="200"> <img src="https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%203.png" width="200">
 
-### Dark theme: 
-![Country List Screen](https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%204.png) ![Country List Screen Search](https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%205.png) ![Country Detail Screen](https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%206.png) 
+### Dark theme 
+<img src="https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%204.png" width="200"> <img src="https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%205.png" width="200"> <img src="https://raw.githubusercontent.com/danielsafronov/swift-countries/main/Screenshots/Screenshot%206.png" width="200">
