@@ -15,6 +15,7 @@ extension Country {
             alpha3Code: mo.alpha3Code,
             region: mo.region,
             subregion: mo.subregion,
+            capital: mo.capital,
             population: mo.population,
             lat: mo.lat,
             lng: mo.lng
@@ -30,6 +31,7 @@ extension CountryMO {
         alpha3Code = entity.alpha3Code
         region = entity.region
         subregion = entity.subregion
+        capital = entity.capital
         population = entity.population ?? 0
         lat = entity.lat ?? 0.0
         lng = entity.lng ?? 0.0

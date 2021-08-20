@@ -12,6 +12,7 @@ struct CountryNetworkDto: Codable, Equatable {
     var alpha3Code: String? = nil
     var region: String? = nil
     var subregion: String? = nil
+    var capital: String? = nil
     var population: Int64? = nil
     var latlng: [Double]? = nil
 }

@@ -30,22 +30,35 @@ struct CountryView: View {
                 
                 VStack {
                     VStack {
-                        CountryItemView(title: "Name", value: model.country.name ?? "")
-                        Divider()
+                        Group {
+                            CountryItemView(title: "Name", value: model.country.name ?? "")
+                            Divider()
+                        }
                         
-                        CountryItemView(title: "Code", value: model.country.alpha3Code ?? "")
-                        Divider()
+                        Group {
+                            CountryItemView(title: "Code", value: model.country.alpha3Code ?? "")
+                            Divider()
+                        }
                         
-                        CountryItemView(title: "Region", value: model.country.region ?? "")
-                        Divider()
+                        Group {
+                            CountryItemView(title: "Region", value: model.country.region ?? "")
+                            Divider()
+                        }
 
-                        CountryItemView(title: "Subregion", value: model.country.subregion ?? "")
-                        Divider()
+                        Group {
+                            CountryItemView(title: "Subregion", value: model.country.subregion ?? "")
+                            Divider()
+                        }
+                        
+                        Group {
+                            CountryItemView(title: "Capital", value: model.country.capital ?? "")
+                            Divider()
+                        }
 
                         CountryItemView(title: "Population", value: String(model.country.population ?? 0))
                     }
                     .padding()
-                    .background(Color(.secondarySystemBackground))
+                    .background(Color(.secondarySystemGroupedBackground))
                 }
                 .cornerRadius(10)
                 .shadow(radius: 10)
