@@ -37,6 +37,7 @@ extension Country {
             alpha3Code: dto.alpha3Code,
             region: dto.region,
             subregion: dto.subregion,
+            capital: dto.capital,
             population: dto.population,
             lat: lat,
             lng: lng
